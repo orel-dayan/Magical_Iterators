@@ -23,7 +23,7 @@ namespace ariel {
         }
 
         if (m_current == nullptr) {
-            m_current = &m_container.m_elements.at(0);
+            m_current = &m_container.m_elements[0];
         }
 
         return **m_current; // dereference operator
@@ -31,7 +31,7 @@ namespace ariel {
 
 
     MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator++() {
-        if (*this == this->end()) {
+        if (*this == this->end()) { // if we are at the end of the container
             throw std::runtime_error("Error - Out of range");
         }
 

@@ -17,11 +17,12 @@ namespace ariel {
             throw std::runtime_error("Error - Out of range");
         }
 
-        if (m_current == nullptr) {
-            m_current = &m_container.m_primes.at(0);
+        if (m_current == nullptr) { // if current is null then we need to set it to the first element
+            m_current = &m_container.m_primes[0]; // i  used [] becaue acording to readme its not matter if  valid
+
         }
 
-        return **m_current;
+        return **m_current; // dereference operator
     }
 
 
@@ -30,7 +31,7 @@ namespace ariel {
             throw std::runtime_error("Error - Out of range");
         }
         if (m_current == nullptr && !m_container.m_primes.empty()) {
-            m_current = &m_container.m_primes.at(0);
+            m_current = &m_container.m_primes[0]; // i  used [] becaue acording to readme its not matter if  valid
         }
         m_current++;
         return *this;

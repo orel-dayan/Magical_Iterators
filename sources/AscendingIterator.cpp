@@ -21,7 +21,7 @@ namespace ariel {
         }
 
         if (m_current == nullptr && !m_container.m_elements.empty()) {
-            m_current = &m_container.m_elements.at(0);
+            m_current = &m_container.m_elements[0]; // i  used [] becaue acording to readme its not matter if  valid
         }
 
         return **m_current;
@@ -32,7 +32,7 @@ namespace ariel {
             throw std::runtime_error("Error - Out of range");
         }
         if (m_current == nullptr) {
-            m_current = &m_container.m_elements.at(0);
+            m_current = &m_container.m_elements[0];
         }
         m_current++;
         return *this;

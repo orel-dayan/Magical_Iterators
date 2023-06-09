@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  8 13:42:47 2023
+# Make data base, printed on Fri Jun  9 16:13:28 2023
 
 # Variables
 
@@ -63,7 +61,7 @@ VSCODE_CODE_CACHE_PATH = /home/user/.config/Code/CachedData/b3e4e68a0bc097f0ae79
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.KGZG61
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.Y8CQ61
 # default
 .LOADED := 
 # default
@@ -73,7 +71,7 @@ MAKEFLAGS = pqrR
 # makefile (from 'Makefile', line 10)
 VALGRIND_FLAGS = -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=6c21a8744e5bef615518d8d86481afae
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=4dc42463376bbc1c25f08b3e6483253c
 # makefile
 CURDIR := /home/user/Documents/Magical_Iterators_B
 # environment
@@ -99,7 +97,7 @@ MAKEFILE_LIST := Makefile
 # environment
 ZSH = /home/user/.oh-my-zsh
 # environment
-VSCODE_PID = 3929
+VSCODE_PID = 4864
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -107,13 +105,13 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/orel-ubuntu:@/tmp/.ICE-unix/1597,unix/orel-ubuntu:/tmp/.ICE-unix/1597
+SESSION_MANAGER = local/orel-ubuntu:@/tmp/.ICE-unix/1579,unix/orel-ubuntu:/tmp/.ICE-unix/1579
 # automatic
 *F = $(notdir $*)
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=6c21a8744e5bef615518d8d86481afae
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=4dc42463376bbc1c25f08b3e6483253c
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -153,7 +151,7 @@ SNAP_USER_COMMON = /home/user/snap/code/common
 # environment
 SNAP = /snap/code/129
 # environment
-INVOCATION_ID = 8ec4bd3d600a4f4e994612969400ba9a
+INVOCATION_ID = de61bf3393dd4e58a28c2a24229c19e5
 # environment
 SNAP_REVISION = 129
 # environment
@@ -191,7 +189,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := run
 # environment
-SYSTEMD_EXEC_PID = 1597
+SYSTEMD_EXEC_PID = 1579
 # environment
 DISPLAY = :0
 # environment
@@ -207,11 +205,11 @@ SNAP_DATA = /var/snap/code/129
 # environment
 SNAP_CONTEXT = W5xynm6t-Int3RaXf6LwOA4WOK8ydcwWBEc83CopKSsbiR4wobQw
 # environment
-MANAGERPID = 1414
+MANAGERPID = 1347
 # environment
 DBUS_STARTER_BUS_TYPE = session
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3884
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4812
 # environment
 PAGER = less
 # environment
@@ -223,7 +221,7 @@ GDK_PIXBUF_MODULE_FILE = /home/user/snap/code/common/.cache/gdk-pixbuf-loaders.c
 # environment
 GIO_MODULE_DIR = /home/user/snap/code/common/.cache/gio-modules
 # environment
-JOURNAL_STREAM = 8:22364
+JOURNAL_STREAM = 8:22958
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -280,6 +278,8 @@ GDMSESSION = ubuntu
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
  
+make: *** No rule to make target 'all'.  Stop.
+
 # Load=133/1024=13%, Rehash=0, Collisions=9/175=5%
 
 # Pattern-specific Variable Values
@@ -288,10 +288,10 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2051, inode 2252422): 16 files, no impossibilities.
-# sources (device 2051, inode 2252477): 5 files, no impossibilities.
+# . (device 2051, inode 2252422): 17 files, no impossibilities.
+# sources (device 2051, inode 2252477): 9 files, no impossibilities.
 
-# 21 files, no impossibilities in 2 directories.
+# 26 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -308,6 +308,12 @@ objects/%.o: sources/%.cpp sources/MagicalContainer.hpp
 
 # Not a target:
 objects/MagicalContainer.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/Iterator.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -347,6 +353,12 @@ valgrind: test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 # Not a target:
+objects/SideCrossIterator.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -370,19 +382,31 @@ run: test
 #  Modification time never checked.
 #  File has not been updated.
 
-test: TestRunner.o StudentTest1.o objects/MagicalContainer.o
+# Not a target:
+objects/AscendingIterator.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test: TestRunner.o StudentTest1.o objects/AscendingIterator.o objects/Iterator.o objects/MagicalContainer.o objects/PrimeIterator.o objects/SideCrossIterator.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 22):
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-demo: Demo.o objects/MagicalContainer.o
+demo: Demo.o objects/AscendingIterator.o objects/Iterator.o objects/MagicalContainer.o objects/PrimeIterator.o objects/SideCrossIterator.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	$(CXX) $(CXXFLAGS) $^ -o $@
+
+# Not a target:
+objects/PrimeIterator.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 TestRunner.o:
@@ -391,19 +415,19 @@ TestRunner.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/32=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/44=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 39 / storage = 414 B / avg = 10 B
-# current buf: size = 8162 B / used = 414 B / count = 39 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 594 B / avg = 12 B
+# current buf: size = 8162 B / used = 594 B / count = 48 / avg = 12 B
 
-# strcache performance: lookups = 56 / hit rate = 30%
+# strcache performance: lookups = 69 / hit rate = 30%
 # hash-table stats:
-# Load=39/8192=0%, Rehash=0, Collisions=0/56=0%
-# Finished Make data base on Thu Jun  8 13:42:47 2023
+# Load=48/8192=1%, Rehash=0, Collisions=0/69=0%
+# Finished Make data base on Fri Jun  9 16:13:28 2023
 
  
