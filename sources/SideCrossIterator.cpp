@@ -7,12 +7,11 @@ namespace ariel {
         return MagicalContainer::SideCrossIterator(m_container);
     }
 
-	MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
-    return m_container.m_elements.empty()
-        ? MagicalContainer::SideCrossIterator(m_container)
-        : MagicalContainer::SideCrossIterator{m_container, &m_container.m_elements[m_container.m_size - 1] + 1};
-}
-
+    MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
+        return m_container.m_elements.empty()
+               ? MagicalContainer::SideCrossIterator(m_container)
+               : MagicalContainer::SideCrossIterator{m_container, &m_container.m_elements[m_container.m_size - 1] + 1};
+    }
 
 
     int &MagicalContainer::SideCrossIterator::operator*() {
@@ -59,9 +58,9 @@ namespace ariel {
     MagicalContainer::SideCrossIterator &
     MagicalContainer::SideCrossIterator::operator=(MagicalContainer::SideCrossIterator &other) {
 
-		if(typeid(*this) != typeid(other)){
-			throw std::runtime_error("Error - Cant assign iterators of different types");
-		}
+        if (typeid(*this) != typeid(other)) {
+            throw std::runtime_error("Error - Cant assign iterators of different types");
+        }
 
         if (&this->getContainer() != &other.getContainer()) {
             throw std::runtime_error("Error - Container is different");

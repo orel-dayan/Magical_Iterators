@@ -2,15 +2,15 @@
 
 namespace ariel {
 
-	MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() {
+    MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() {
         return MagicalContainer::AscendingIterator{m_container};
     }
 
-	MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() {
-		return m_container.m_elements.empty()
-			   ? MagicalContainer::AscendingIterator(m_container)
-			   : MagicalContainer::AscendingIterator{m_container, &m_container.m_elements[m_container.m_size]};
-	}
+    MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() {
+        return m_container.m_elements.empty()
+               ? MagicalContainer::AscendingIterator(m_container)
+               : MagicalContainer::AscendingIterator{m_container, &m_container.m_elements[m_container.m_size]};
+    }
 
     int &MagicalContainer::AscendingIterator::operator*() {
         if (m_container.m_size == 0) {
@@ -37,7 +37,6 @@ namespace ariel {
         m_current++;
         return *this;
     }
-
 
 
 }

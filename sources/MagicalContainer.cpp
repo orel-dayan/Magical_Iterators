@@ -18,9 +18,9 @@ namespace ariel {
 
     void MagicalContainer::addElement(int element) {
         long elementAt = findElementIndex(element); // find if element already exists
-        if (elementAt != -1){
-			return;
-		}
+        if (elementAt != -1) {
+            return;
+        }
 
         int *value = new int(element); // create new element to add to the container
         addSortedElements(value); // add the element to the sorted vector
@@ -75,11 +75,9 @@ namespace ariel {
         m_elements.insert(location, num);
     }
 
-	  void MagicalContainer::addPrime(int *num) {
+    void MagicalContainer::addPrime(int *num) {
         m_primes.push_back(num); // add the element to the prime vector
     }
-
-
 
 
     void MagicalContainer::removeSortedElements(const int *num) {
@@ -92,7 +90,7 @@ namespace ariel {
         }
     }
 
-	   void MagicalContainer::removePrime(const int *num) {
+    void MagicalContainer::removePrime(const int *num) {
         for (auto it = m_primes.begin(); it != m_primes.end(); ++it) {
             if (*it == num) { // if the element is found in the prime vector
                 m_primes.erase(it);
@@ -106,7 +104,7 @@ namespace ariel {
         return m_size;
     }
 
-	MagicalContainer::~MagicalContainer() {
+    MagicalContainer::~MagicalContainer() {
         for (unsigned long i = 0; i < m_size; i++) {
             delete m_elements.at(i);
         }

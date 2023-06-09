@@ -7,7 +7,7 @@
 
 namespace ariel {
 
-	/**
+    /**
      * A container class that stores in a sorted manner and provides
      * iterators for accessing elements in ascending order, side-cross order,
      * and prime numbers only.
@@ -22,19 +22,19 @@ namespace ariel {
 
 
     public:
-		 // Default constructor - creates an empty container
+        // Default constructor - creates an empty container
         MagicalContainer() : m_size(0) {};
 
-		// Copy constructor
+        // Copy constructor
         MagicalContainer(const MagicalContainer &other) = default;
 
-		// Move constructor
+        // Move constructor
         MagicalContainer(MagicalContainer &&other)
 
         noexcept =
         default;
 
-		// Copy assignment operator
+        // Copy assignment operator
         MagicalContainer &operator=(const MagicalContainer &other) {
             if (this != &other) {
                 m_elements = other.m_elements;
@@ -44,52 +44,54 @@ namespace ariel {
             return *this;
         }
 
-		// Move assignment operator
+        // Move assignment operator
         MagicalContainer &operator=(MagicalContainer &&other)
 
         noexcept =
         default;
 
-		// Destructor
+        // Destructor
         ~MagicalContainer();
 
-		// Checks if a given number is prime
+        // Checks if a given number is prime
         static bool isPrime(int &num);
 
-		// Adds a given number to the container
+        // Adds a given number to the container
         void addElement(int element);
 
-		// Removes a given number from the container
+        // Removes a given number from the container
         void removeElement(int element);
 
-		// Returns the size of the container
+        // Returns the size of the container
         int size() const;
 
-		// Forward declaration of iterator classes
+        // Forward declaration of iterator classes
         class AscendingIterator;
+
         class SideCrossIterator;
+
         class PrimeIterator;
 
     private:
-		// Adds a prime number to the prime vector
+        // Adds a prime number to the prime vector
         void addPrime(int *number);
 
-		// Adds a sorted number to the sorted vector
+        // Adds a sorted number to the sorted vector
         void addSortedElements(int *number);
 
-		// Removes a prime number from the prime vector
+        // Removes a prime number from the prime vector
         void removePrime(const int *number);
 
-		// Removes a sorted number from the sorted vector
+        // Removes a sorted number from the sorted vector
         void removeSortedElements(const int *number);
 
-		// Finds the index of a given number
+        // Finds the index of a given number
         long findElementIndex(int number);
     };
 
-   /**
-     * Base iterator class for the MagicalContainer.
-     */
+    /**
+      * Base iterator class for the MagicalContainer.
+      */
 
     class Iterator {
     protected:
@@ -122,12 +124,12 @@ namespace ariel {
 
         bool operator>(const Iterator &other) const; // greater than operator
 
-		void checkType(const Iterator &other) const; // checks if two iterators are of the same type
+        void checkType(const Iterator &other) const; // checks if two iterators are of the same type
     };
 
-  /**
-     * Iterator for accessing prime numbers in the MagicalContainer.
-     */
+    /**
+       * Iterator for accessing prime numbers in the MagicalContainer.
+       */
 
     class MagicalContainer::PrimeIterator : public Iterator {
     private:
@@ -174,9 +176,10 @@ namespace ariel {
 
         AscendingIterator end(); // end iterator
     };
-	 /**
-     * Iterator for accessing elements in side-cross order in the MagicalContainer.
-     */
+
+    /**
+    * Iterator for accessing elements in side-cross order in the MagicalContainer.
+    */
 
     class MagicalContainer::SideCrossIterator : public Iterator {
     private:
@@ -204,7 +207,7 @@ namespace ariel {
 
         int &operator*();
 
-		void updateCurrentAndNext(); // updates the current and next elements
+        void updateCurrentAndNext(); // updates the current and next elements
 
         SideCrossIterator &operator++(); // prefix increment operator
 
