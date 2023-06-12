@@ -14,7 +14,7 @@ namespace ariel {
 
     int &MagicalContainer::PrimeIterator::operator*() {
         if (*this == this->end() || m_container.m_primes.empty()) {
-            throw std::runtime_error("Error - Out of range");
+            throw std::runtime_error("Error - Out of range ");
         }
 
         if (m_current == nullptr) { // if current is null then we need to set it to the first element
@@ -28,7 +28,7 @@ namespace ariel {
 
     MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
         if (*this == this->end()) {
-            throw std::runtime_error("Error - Out of range");
+            throw std::runtime_error("Error - Out of range ");
         }
         if (m_current == nullptr && !m_container.m_primes.empty()) {
             m_current = &m_container.m_primes[0]; // i  used [] becaue acording to readme its not matter if  valid

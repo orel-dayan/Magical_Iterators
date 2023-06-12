@@ -16,10 +16,10 @@ namespace ariel {
 
     int &MagicalContainer::SideCrossIterator::operator*() {
         if (m_container.m_size == 0) {
-            throw std::runtime_error("Error - Out of range");
+            throw std::runtime_error("Error: Out of range ");
         }
         if (*this == this->end()) {
-            throw std::runtime_error("Error - Out of range");
+            throw std::runtime_error("Error:Out of range ");
         }
 
         if (m_current == nullptr) {

@@ -595,4 +595,3 @@ TEST_CASE("operator= throws when iterators are pointing at different containers"
         CHECK_THROWS_AS(it1 = it2, std::runtime_error);
    }
 }
-
